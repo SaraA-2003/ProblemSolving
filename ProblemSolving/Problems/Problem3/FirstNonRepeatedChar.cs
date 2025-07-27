@@ -12,39 +12,44 @@ using System.Collections.Immutable;
  * will be the missing number
  * 
  * */
-class Program3
+
+namespace Problems.Problem3
 {
-    static void Main()
+
+    class Program3
     {
-
-        int[] number = {1, 2 ,3 ,5};
-
-        if (number.Length == 0)
+        public static void Run()
         {
-            Console.WriteLine("The array is empty");
-        }
-        else
-        {
-            Console.WriteLine("The numbers are: ");
-            foreach (int i in number)
+
+            int[] number = { 1, 2, 3, 5 };
+
+            if (number.Length == 0)
             {
-                Console.Write($"{i} ");
+                Console.WriteLine("The array is empty");
             }
-            Console.WriteLine("\nThe missing number is: " + missingNumber(number));
+            else
+            {
+                Console.WriteLine("The numbers are: ");
+                foreach (int i in number)
+                {
+                    Console.Write($"{i} ");
+                }
+                Console.WriteLine("\nThe missing number is: " + missingNumber(number));
+            }
         }
-    }
 
-    static int missingNumber(int[] num)
-    {
-     
-        int k = num.Length + 1; // the array have missing number so we must add +1 to the length so we can perform th esum formula of the first k numbers
-        int realTotal = k * (k + 1) / 2;
-        int total = 0;
-        for (int i = 0; i < num.Length; i++)
+        static int missingNumber(int[] num)
         {
-            total+= num[i];
+
+            int k = num.Length + 1; // the array have missing number so we must add +1 to the length so we can perform th esum formula of the first k numbers
+            int realTotal = k * (k + 1) / 2;
+            int total = 0;
+            for (int i = 0; i < num.Length; i++)
+            {
+                total += num[i];
+            }
+
+            return realTotal - total;
         }
-    
-       return realTotal - total;
     }
 }

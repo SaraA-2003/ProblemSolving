@@ -1,45 +1,49 @@
 ﻿// See https://aka.ms/new-console-template for more information
-class Program
+
+namespace Problems.Problem5
 {
-    static void Main()
+    class Program5
     {
-        
-        int[] numbers = {5,9,1,0,4,9};
-        if (numbers.Length == 0)
+        public static void Run()
         {
-            Console.WriteLine("The array is empty");
 
-        }
-        else if (numbers.Length == 1)
-        {
-            Console.WriteLine("The array contains only one number");
-        }
-        else
-        {
-            Console.WriteLine("The array is: ");
-            foreach (int number in numbers)
+            int[] numbers = { 5, 9, 1, 0, 4, 9 };
+            if (numbers.Length == 0)
             {
-                Console.Write($"{number} ");
+                Console.WriteLine("The array is empty");
+
             }
-            int max = maxNum(numbers);
-
-            Console.WriteLine($"\nThe max number is: {max}");
-        }
-
-    }//end of main
-
-
-    static int maxNum(int[] numbers)
-    {
-        int max = numbers[0];
-        for (int i = 0; i < numbers.Length; i++)
-        {
-            if (max < numbers[i])
+            else if (numbers.Length == 1)
             {
-                max = numbers[i];
+                Console.WriteLine("The array contains only one number");
+            }
+            else
+            {
+                Console.WriteLine("The array is: ");
+                foreach (int number in numbers)
+                {
+                    Console.Write($"{number} ");
+                }
+                int max = maxNum(numbers);
+
+                Console.WriteLine($"\nThe max number is: {max}");
             }
 
-        }
-        return max;
-    }// end of method
-}// end of class
+        }//end of main
+
+
+        static int maxNum(int[] numbers)
+        {
+            int max = numbers[0];
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                if (max < numbers[i])
+                {
+                    max = numbers[i];
+                }
+
+            }
+            return max;
+        }// end of method
+    }// end of class
+}

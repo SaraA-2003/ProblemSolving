@@ -1,7 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 /*
-class Program
+class Program2
 {
     static char findFirstUnrepeatedChar(string str)
 
@@ -31,7 +31,7 @@ class Program
 
         return '!';
     }
-    static void Main()
+    static void Main2()
     {
         string name = "aabbc";
         if (name.Length == 0) {
@@ -49,43 +49,49 @@ class Program
 
 //using dicitionary 
 
-class Program2
+
+namespace Problems.Problem2
 {
-    static void Main()
+    class Program2
     {
-        string name = "aabbcdd";
-        char c = nonRepeatedChar(name);
-        Console.WriteLine(c);
-
-    }
-
-
-    static char nonRepeatedChar(string name)
-    {
-        Dictionary<char, int> dic = new Dictionary<char, int>();
-        for (int i = 0; i < name.Length; i++)
+       public static void Run()
         {
-            char c = name[i]; //key  
-            if (dic.ContainsKey(c)){
-                dic[c]++;//value ++
+            string name = "aabbcdd";
+            char c = nonRepeatedChar(name);
+            Console.WriteLine(c);
 
-            }
-            else
+        }
+
+
+        static char nonRepeatedChar(string name)
+        {
+            Dictionary<char, int> dic = new Dictionary<char, int>();
+            for (int i = 0; i < name.Length; i++)
             {
-                dic.Add(c, 1);
+                char c = name[i]; //key  
+                if (dic.ContainsKey(c))
+                {
+                    dic[c]++;//value ++
+
+                }
+                else
+                {
+                    dic.Add(c, 1);
+                }
+
             }
 
-        }
-
-        for (int i = 0; i < name.Length; i++)
-        {
-            char c = name[i];
-            if (dic[c] == 1 && dic.ContainsKey(c)){
-                return c;
+            for (int i = 0; i < name.Length; i++)
+            {
+                char c = name[i];
+                if (dic[c] == 1 && dic.ContainsKey(c))
+                {
+                    return c;
+                }
             }
+
+            return '\0';
         }
 
-        return '\0';
     }
-
 }

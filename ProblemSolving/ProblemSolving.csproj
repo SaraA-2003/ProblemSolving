@@ -7,4 +7,13 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+	<ItemGroup>
+		<Compile Include="SortAnArray\*.cs" />
+		<Compile Include="MaxValue\*.cs" />
+		<Compile Include="CountVowels\*.cs" />
+		<Compile Include="Program\*.cs" />
+		
+	</ItemGroup>
+
+
 </Project>

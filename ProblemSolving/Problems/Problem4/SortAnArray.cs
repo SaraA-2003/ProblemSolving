@@ -1,58 +1,62 @@
 ﻿// See https://aka.ms/new-console-template for more information
-class Program
+
+namespace Problems.Problem4
 {
-    static void Main()
+    class Program4
     {
-       
-        int[] numbers = {9,5,2,1,0};
-    
+        public static void Run()
+        {
 
-        if (numbers.Length == 0)
-        {
-            Console.WriteLine("Empty Array, can't be sort");
-        }
-        else if (numbers.Length == 1)
-        {
-            Console.WriteLine("Array contains only one number");
-        }
-        else
-        {
-            Console.WriteLine("Before Sorting: ");
-            foreach (int number in numbers)
+            int[] numbers = { 9, 5, 2, 1, 0 };
+
+
+            if (numbers.Length == 0)
             {
-
-                Console.Write($"{number} ");
+                Console.WriteLine("Empty Array, can't be sort");
             }
-            Console.WriteLine("\nSorted array: ");
-            int[] sorted = sort(numbers);
-            foreach (int number in sorted)
+            else if (numbers.Length == 1)
             {
-
-                Console.Write($"{number} ");
+                Console.WriteLine("Array contains only one number");
             }
-        }
-
-    }// end of main method
-
-    static int[] sort(int[] numbers)
-    {
-        for (int i = 0; i < numbers.Length -1 ; i++)
-        {
-            for (int j = i; j < numbers.Length; j++)
+            else
             {
-                if (numbers[i] >= numbers[j])
+                Console.WriteLine("Before Sorting: ");
+                foreach (int number in numbers)
                 {
-                    int temp = numbers[i];
-                    numbers[i] = numbers[j];
-                    numbers[j] = temp;
+
+                    Console.Write($"{number} ");
+                }
+                Console.WriteLine("\nSorted array: ");
+                int[] sorted = sort(numbers);
+                foreach (int number in sorted)
+                {
+
+                    Console.Write($"{number} ");
                 }
             }
-        }
-        return numbers;
+
+        }// end of main method
+
+        static int[] sort(int[] numbers)
+        {
+            for (int i = 0; i < numbers.Length - 1; i++)
+            {
+                for (int j = i; j < numbers.Length; j++)
+                {
+                    if (numbers[i] >= numbers[j])
+                    {
+                        int temp = numbers[i];
+                        numbers[i] = numbers[j];
+                        numbers[j] = temp;
+                    }
+                }
+            }
+            return numbers;
 
 
-    }// end of sort
+        }// end of sort
 
 
 
-}// end of classs
+    }// end of classs
+}
