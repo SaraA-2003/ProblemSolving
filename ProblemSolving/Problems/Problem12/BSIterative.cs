@@ -10,7 +10,7 @@ namespace Problems.Problem12
 
         public static void Run()
         {
-            int[] numbers = {};
+            int[] numbers = {1,3,6,4};
             if (numbers.Length == 0)
             {
                 Console.WriteLine("The array of numbers is empty");
