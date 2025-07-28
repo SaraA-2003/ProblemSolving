@@ -16,22 +16,4 @@ The algorithm loops through the array once and keeps track of:
 
 If a new maximum is found, `secondMax` is updated to the previous `max`.
 
-## Code Summary
 
-```csharp
-static int findSecondLargestNumber(int[] num)
-{
-    int secondMax = 0;
-    int max = num[0];
-
-    for (int i = 0; i < num.Length; i++)
-    {
-        if (max < num[i])
-        {
-            secondMax = max;
-            max = num[i];
-        }
-    }
-
-    return secondMax;
-}
