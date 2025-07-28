@@ -1,42 +1,21 @@
-## Problem 7: Reverse a String
+# Problem 7: Reverse a String
 
-### Problem Overview
+## Overview  
+This problem requires implementing a method that takes a string input and returns the reversed version of that string. The reversal should be done manually by iterating through the string from the end to the beginning, without using built-in reverse methods.
 
-Write a C# method that takes a string as input and returns a new string that is the reverse of the original. This problem is useful for practicing string manipulation and understanding how to work with character arrays.
+## Requirements  
+- Given a string, return a new string which is the reverse of the input.  
+- Do not use built-in methods like `Array.Reverse()` or `String.Reverse()`.  
+- Handle all characters including spaces and special symbols.
 
-### Core Concepts
+## Algorithm  
+The algorithm follows these steps:
 
-- String manipulation
-- Character arrays
-- Looping in reverse
-- Building strings manually
+- Convert the input string into a character array.  
+- Initialize an empty string `reversed` to hold the reversed characters.  
+- Iterate through the character array starting from the last index down to the first.  
+- Append each character to `reversed`.  
+- Return the `reversed` string after the loop ends.
 
-### Algorithm Steps
-
-1. Convert the input string into a character array using `ToCharArray()`.
-2. Initialize an empty string to store the reversed result.
-3. Loop through the array from the last character to the first.
-4. Append each character to the result string.
-5. Return the final reversed string.
-
-### Example
-
-```csharp
-Input:  "hello"
-Output: "olleh"
-```
-### Code
-
-```csharp
-static string Reverse(string name)
-{
-    char[] chars = name.ToCharArray();  // Convert string into array of chars
-    string reversed = "";
-
-    for (int i = name.Length - 1; i >= 0; i--)
-    {
-        reversed += chars[i];
-    }
-
-    return reversed;
-}
+Time complexity: **O(n)**  
+Space complexity: **O(n)**
