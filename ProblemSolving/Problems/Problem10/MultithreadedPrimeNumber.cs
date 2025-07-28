@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace Problems.Problem10
 {
-    internal class MultithreadedPrimeNumber
+     internal class MultithreadedPrimeNumber
     {
         public static async Task Run()
 
         {
 
-          
+
             int max = 1000000;
             int numOfThreads = 5;
             int group = max / numOfThreads;
@@ -22,21 +22,22 @@ namespace Problems.Problem10
 
 
             //create num of threads tasks and each task have a range
-            for (int i = 0; i < numOfThreads; i++) {
+            for (int i = 0; i < numOfThreads; i++)
+            {
                 int start = i * group + 1;
 
                 int end = 0;
 
                 if (i == numOfThreads - 1)
                     end = max;
-                else 
-                     end = start + group - 1;
+                else
+                    end = start + group - 1;
 
                 tasks.Add(createTaskOfPrimeNumbers(start, end));
-                
+
 
             }
-         
+
 
             // return array of tasks
             var Temp = await Task.WhenAll(tasks);// wait for all the tasks to finish
@@ -46,7 +47,7 @@ namespace Problems.Problem10
             foreach (var primes in Temp)
                 PrimeNumbers.AddRange(primes);
 
-            
+
 
             // Output or use the result
             Console.WriteLine($"Total primes found: {PrimeNumbers.Count}");
@@ -55,17 +56,17 @@ namespace Problems.Problem10
 
         static async Task<List<int>> createTaskOfPrimeNumbers(int start, int end)
         {
-            
+
             return await Task.Run(() =>
             {
-                
+
                 List<int> primeNumbers = new List<int>();
                 for (int i = start; i <= end; i++)
                 {
-                    if(isPrime(i) == true)
-                    primeNumbers.Add(i);
+                    if (isPrime(i) == true)
+                        primeNumbers.Add(i);
 
-                   
+
                 }
 
 
@@ -78,7 +79,7 @@ namespace Problems.Problem10
 
         static bool isPrime(int number)
         {
-           
+
             if (number < 2)
                 return false;
             if (number == 2)
@@ -86,7 +87,7 @@ namespace Problems.Problem10
             if (number % 2 == 0)
                 return false;
             int range = (int)Math.Sqrt(number);
-            for (int i = 2; i < range; i++)
+            for (int i = 3; i <= range; i += 2)
             {
                 if (number % i == 0)
                 {
@@ -99,6 +100,6 @@ namespace Problems.Problem10
             return true;
         }// end of method
 
-        }// endo of class
-          
+    }// endo of class
+
 }

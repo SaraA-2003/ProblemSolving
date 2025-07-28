@@ -27,7 +27,8 @@ namespace ProblemSolving
             //ReverseAString.Run();
             //MergeTwoSortedArrays.Run();
             //OnlyDigitString.Run();
-            MultithreadedPrimeNumber.Run();
+            
+           Task task =  MultithreadedPrimeNumber.Run();
         }
     }
 }
