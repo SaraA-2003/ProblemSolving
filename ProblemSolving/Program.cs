@@ -10,6 +10,9 @@ using Problems.Problem7;
 using Problems.Problem8;
 using Problems.Problem9;
 using Problems.Problem10;
+using Problems.Problem11;
+using Problems.Problem12;
+
 
 namespace ProblemSolving
 {
@@ -27,8 +30,10 @@ namespace ProblemSolving
             //ReverseAString.Run();
             //MergeTwoSortedArrays.Run();
             //OnlyDigitString.Run();
-            
-           Task task =  MultithreadedPrimeNumber.Run();
+
+            //Task task =  MultithreadedPrimeNumber.Run();// it won't run inside this method, but if you use its code in separate project it will run perfectly
+            //Subsets.Run();
+            BSIterative.Run();
         }
     }
 }
