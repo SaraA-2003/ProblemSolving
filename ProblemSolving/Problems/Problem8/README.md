@@ -1,17 +1,22 @@
-## Problem 8: Merge Two Sorted Arrays
+# Problem 8: Merge Two Sorted Arrays
 
-### Description
+## Overview  
+This problem requires implementing a method that merges two sorted arrays of integers into a single sorted array. The input arrays are assumed to be sorted in ascending order, and the output array should maintain this order.
 
-This program defines a method that merges two **sorted integer arrays** into a single sorted array. It assumes the input arrays are already sorted in ascending order and combines them in order.
+## Requirements  
+- Given two sorted integer arrays, merge them into one sorted array.  
+- Do not use built-in sorting methods on the combined array.  
+- Handle cases where one or both arrays are empty.
 
-### Approach
+## Algorithm  
+The algorithm follows these steps:
 
-- Get the lengths of the two arrays.
-- Handle edge cases: if one of the arrays is empty, return the other.
-- Use three pointers:
-  - `i` for iterating array `a`
-  - `j` for iterating array `b`
-  - `k` for building the merged result
-- Compare elements from both arrays and insert the smaller one into the result.
-- Append any remaining elements after one array is fully traversed.
+- Initialize pointers (indices) for both arrays and a pointer for the result array.  
+- Compare the elements at the pointers of both arrays.  
+- Append the smaller element to the result array and move the corresponding pointer forward.  
+- Repeat the process until one of the arrays is fully traversed.  
+- Append any remaining elements from the other array to the result array.  
+- Return the merged sorted array.
 
+Time complexity: **O(n + m)**, where `n` and `m` are the lengths of the two input arrays.  
+Space complexity: **O(n + m)**
