@@ -19,21 +19,3 @@ The solution uses a simple selection-sort-like technique. The algorithm compares
 Time complexity: **O(n²)**  
 Space complexity: **O(1)** (in-place sorting)
 
-## Code
-```csharp
-static int[] sort(int[] numbers)
-{
-    for (int i = 0; i < numbers.Length - 1; i++)
-    {
-        for (int j = i; j < numbers.Length; j++)
-        {
-            if (numbers[i] >= numbers[j])
-            {
-                int temp = numbers[i];
-                numbers[i] = numbers[j];
-                numbers[j] = temp;
-            }
-        }
-    }
-    return numbers;
-}
