@@ -21,23 +21,3 @@ The algorithm follows these steps:
 
 Time complexity: **O(n)**  
 Space complexity: **O(1)**
-
-## Code
-```csharp
-static int countVowels(string name)
-{
-    int count = 0;
-    string sent = name.ToLower();
-    foreach (char c in sent)
-    {
-        if (c == ' ')
-        {
-            continue;
-        }
-        if (c == 'a' || c == 'e' || c == 'o' || c == 'i' || c == 'u')
-        {
-            count++;
-        }
-    }
-    return count;
-}
