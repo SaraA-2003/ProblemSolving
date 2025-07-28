@@ -20,17 +20,4 @@ The solution uses a linear search to find the maximum value:
 Time complexity: **O(n)**  
 Space complexity: **O(1)**
 
-## Code
-```csharp
-static int maxNum(int[] numbers)
-{
-    int max = numbers[0];
-    for (int i = 0; i < numbers.Length; i++)
-    {
-        if (max < numbers[i])
-        {
-            max = numbers[i];
-        }
-    }
-    return max;
-}
+
