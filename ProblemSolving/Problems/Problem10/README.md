@@ -22,7 +22,7 @@ The algorithm follows these steps:
 Time complexity: Approximately **O(n√n / T)** where `T` is the number of tasks (threads).  
 Space complexity: **O(n)** for storing prime numbers found.
 
-
+---
 
 ### Optional Notes  
 - The prime checking function `isPrime` uses an optimized approach checking divisibility up to the square root of the number and skipping even numbers after 2.  
