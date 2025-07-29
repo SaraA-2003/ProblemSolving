@@ -13,6 +13,7 @@ using Problems.Problem10;
 using Problems.Problem11;
 using Problems.Problem12;
 using Problems.Problem13;
+using Problems.Problem14;
 
 
 namespace ProblemSolving
@@ -35,7 +36,8 @@ namespace ProblemSolving
             //Task task =  MultithreadedPrimeNumber.Run();// it won't run inside this method, but if you use its code in separate project it will run perfectly
             //Subsets.Run();
             //BSIterative.Run();
-            BSRecursive.Run();
+            //BSRecursive.Run();
+            ElectricityUsageOptimizer.Run();
         }
     }
 }
