@@ -11,12 +11,12 @@ Each problem folder includes a method that solves the given challenge. The `Prog
 1. **Second Largest Number**  
    Find the second largest number in an array of integers.
 
-2. **Missing Number**  
+2. **First Non-Repeated Character**  
+   Find the first non-repeated character in a given string.
+
+3. **Missing Number**  
    Identify the missing number in a sequence from 1 to N using the formula:  
    `Sum = k * (k + 1) / 2`
-
-3. **First Non-Repeated Character**  
-   Find the first non-repeated character in a given string.
 
 4. **Sort an Array (without built-in methods)**  
    Sort an array of integers in ascending order using nested loops and manual swapping.
