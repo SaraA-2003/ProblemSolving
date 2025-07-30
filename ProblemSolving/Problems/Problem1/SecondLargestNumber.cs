@@ -2,53 +2,54 @@
 
 namespace Problems.Problem1
 {
-
     class Program1
     {
-
-        static int findSecondLargestNumber(int[] num)
+        static int? FindSecondLargestNumber(int[] num)
         {
-            int secondMax = 0;
-            int max = num[0];
+            int max = int.MinValue;
+            int secondMax = int.MinValue;
 
-            for (int i = 0; i < num.Length; i++)
+            foreach (int value in num)
             {
-                if (max < num[i])
+                if (value > max)
                 {
                     secondMax = max;
-                    max = num[i];
+                    max = value;
+                }
+                else if (value > secondMax && value != max)
+                {
+                    secondMax = value;
                 }
             }
 
-            return secondMax;
+            // If secondMax was never updated, it means no valid second max exists
+            return secondMax == int.MinValue ? (int?)null : secondMax;
         }
+
         public static void Run()
         {
+            int[] numbers = { 5, 5, 5 }; // Example array
 
-            int[] numbers = { 1 };
             if (numbers.Length == 0)
             {
-                Console.WriteLine("Error: the array is empty");
-
+                Console.WriteLine("Error: The array is empty.");
             }
             else if (numbers.Length == 1)
             {
-                Console.WriteLine("There is only one number, so there is not second max number");
+                Console.WriteLine("There is only one number, so there is no second max number.");
             }
             else
             {
-                int secondMax = findSecondLargestNumber(numbers);
-                Console.WriteLine($"the second max number is {secondMax}");
-
+                int? secondMax = FindSecondLargestNumber(numbers);
+                if (secondMax == null)
+                {
+                    Console.WriteLine("No valid second max number found (all elements are the same).");
+                }
+                else
+                {
+                    Console.WriteLine($"The second max number is {secondMax}");
+                }
             }
-
-
         }
-
-
-
-
     }
-
-
 }

@@ -23,7 +23,7 @@ namespace ProblemSolving
         static void Main(string[] args)
         {
             // Call the solution you want to run
-            //Program1.Run();
+            Program1.Run();
             //Program2.Run();
             //Program3.Run();
             //Program4.Run();
@@ -37,7 +37,7 @@ namespace ProblemSolving
             //Subsets.Run();
             //BSIterative.Run();
             //BSRecursive.Run();
-            ElectricityUsageOptimizer.Run();
+            //ElectricityUsageOptimizer.Run();
         }
     }
 }
