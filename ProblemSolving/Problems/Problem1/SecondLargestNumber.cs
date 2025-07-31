@@ -28,7 +28,7 @@ namespace Problems.Problem1
 
         public static void Run()
         {
-            int[] numbers = { 5, 5, 5 }; // Example array
+            int[] numbers = { 6, 3, 3 }; // Example array
 
             if (numbers.Length == 0)
             {

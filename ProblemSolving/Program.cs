@@ -14,6 +14,9 @@ using Problems.Problem11;
 using Problems.Problem12;
 using Problems.Problem13;
 using Problems.Problem14;
+using Problems.Problem15;
+using ProblemSolving.Problems.Problem16;
+using ProblemSolving.Problems.Problem17;
 
 
 namespace ProblemSolving
@@ -23,7 +26,7 @@ namespace ProblemSolving
         static void Main(string[] args)
         {
             // Call the solution you want to run
-            Program1.Run();
+            //Program1.Run();
             //Program2.Run();
             //Program3.Run();
             //Program4.Run();
@@ -38,6 +41,9 @@ namespace ProblemSolving
             //BSIterative.Run();
             //BSRecursive.Run();
             //ElectricityUsageOptimizer.Run();
+            //SparseMatrixCompression.Run();
+            //PasswordPatternGenerator.Run();
+            DeepObjectCloner.Run();
         }
     }
 }
