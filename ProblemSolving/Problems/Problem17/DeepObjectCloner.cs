@@ -6,7 +6,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
-
+//NOTE
 //this version satisfy the reference loop and lists and nested objects 
 
 
@@ -108,29 +108,31 @@ namespace ProblemSolving.Problems.Problem17
 
         public static void Run()
         {
-            Person original = new Person();
-            original.Name = "Ahmad";
-            original.Friend = new Person();
-            original.Friend.Name = "Sara";
+            Person p1 = new Person();
+            p1.Name = "Sara";
+            p1.Friend = new Person();
+            p1.Friend.Name = "Malak";
 
-            Person clone = original.DeepClone();
+            Console.Write("Cloning...\n\n");
+            Person p2 = p1.DeepClone();
 
-            // Print before change
-            Console.WriteLine("Before change:");
-            Console.WriteLine($"Original.Name: {original.Name}");
-            Console.WriteLine($"Original.Friend.Name: {original.Friend.Name}");
-            Console.WriteLine($"Clone.Name: {clone.Name}");
-            Console.WriteLine($"Clone.Friend.Name: {clone.Friend.Name}");
+           
+           
+            Console.WriteLine($"Person 1 name: {p1.Name}");
+            Console.WriteLine($"Person 1 friend's name: {p1.Friend.Name}\n");
+
+            Console.WriteLine($"Person 2 name (cloned): {p2.Name}");
+            Console.WriteLine($"Person 2 friend's name (cloned): {p2.Friend.Name}");
 
             // Change only original.Name
-            original.Name = "Ali";
+            p1.Name = "Sama";
 
             // Print after change
-            Console.WriteLine("\nAfter change:");
-            Console.WriteLine($"Original.Name: {original.Name}");
-            Console.WriteLine($"Original.Friend.Name: {original.Friend.Name}");
-            Console.WriteLine($"Clone.Name: {clone.Name}");
-            Console.WriteLine($"Clone.Friend.Name: {clone.Friend.Name}");
+            Console.WriteLine("\nAfter change Person 1 name :\n");
+            Console.WriteLine($"Person 1 name: {p1.Name}");
+            Console.WriteLine($"Person 1 friend's name: {p1.Friend.Name}\n");
+            Console.WriteLine($"Person 2 name (cloned): {p2.Name}");
+            Console.WriteLine($"Person 2 friend's name (cloned): {p2.Friend.Name}");
 
 
         }
