@@ -22,19 +22,18 @@ Calculate the **accurate total cost** of electricity usage, taking into account:
 
 ## Algorithm Overview
 
-The billing logic is based on **interval splitting** and **rate application**:
+This program calculates the total electricity cost based on usage records that include start time, end time, and power consumption in kilowatts. The billing rates differ between peak hours (6:00 AM to 10:00 PM) and off-peak hours (10:00 PM to 6:00 AM).
 
-1. **Iterate over each usage record**:
-   - Get `start` and `end` `DateTime`.
-2. **Split the time span into 1-minute intervals** (fine granularity for precision).
-3. For each minute:
-   - Check the **hour of the day**:
-     - If time is between `6:00 AM` and `10:00 PM` → count as **Peak**
-     - Else → count as **Off-Peak**
-4. After counting minutes for each category:
-   - Convert to **hours**: `minutes / 60.0`
-   - Compute energy consumed in each period: `hours × power (kW)`
-   - Multiply by appropriate rate:
-     - `$0.20/kWh` for Peak
-     - `$0.10/kWh` for Off-Peak
-5. Accumulate cost and return total.
+To ensure accurate billing, the algorithm:
+
+- Splits each usage record’s time interval into peak and off-peak segments if it spans across these periods.
+
+- Calculates the duration spent in each period separately.
+
+- Multiplies each duration by the power consumption and the corresponding rate ($0.20 per kWh during peak, $0.10 per kWh off-peak).
+
+- Sums the partial costs to obtain the total cost for each usage record.
+
+- Aggregates costs from all records to compute the final total billing amount.
+
+This approach guarantees precise cost calculation for any usage pattern within a single day, including intervals that cross between peak and off-peak hours.
